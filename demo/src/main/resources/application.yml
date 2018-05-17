@@ -1,0 +1,37 @@
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url : jdbc:mysql://localhost:3306/demo
+    username : admin
+    password : admin
+  data:
+    mongodb:
+      database : admin
+      host : localhost
+      username : springbootdb
+      password : springbootdb
+      port : 27017
+      repositories:
+        type: auto
+  application:
+    name: demo1
+  liquibase:
+    change-log : classpath:db/liquibase-changelog.xml
+
+server:
+  port: 8888
+  
+eureka:
+    instance:
+        prefer-ip-address: true
+        appname: demoserver2
+    client:
+      enabled: true
+      registerWithEureka: true
+      fetchRegistry: true
+      service-url:
+            defaultZone: http://admin:admin@localhost:8761/eureka/        
+
+  

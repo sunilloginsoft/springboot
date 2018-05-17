@@ -1,0 +1,14 @@
+
+server:
+  port: 8889
+  
+eureka:
+    instance:
+        prefer-ip-address: true
+        appname: demoserver3
+    client:
+      enabled: true
+      registerWithEureka: true
+      fetchRegistry: true
+      service-url:
+            defaultZone: http://admin:admin@localhost:8761/eureka/        
